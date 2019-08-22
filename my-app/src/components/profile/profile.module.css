@@ -1,0 +1,9 @@
+
+
+.profile {
+  grid-area: c;
+  background-color: grey;
+}
+.profile img{
+  width: 100%;
+}
