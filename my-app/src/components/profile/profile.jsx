@@ -1,16 +1,12 @@
 import React from 'react';
 import classes from './profile.module.css';
 import MyPosts from './myPosts/myPosts';
+import ProfileInfo from './profileInfo/profileInfo';
 
 
 const Profile = () =>(
     <div>
-       <div>
-        <img src = "https://asiamountains.net/upload/slide/slide-1960x857-07.jpg"></img>
-       </div>
-       <div>
-         ava + description
-       </div>
+       <ProfileInfo/>
        <MyPosts/>
      </div>
 );

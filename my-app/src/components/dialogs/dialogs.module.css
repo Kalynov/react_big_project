@@ -7,11 +7,12 @@ grid-template-columns: 2fr 10fr;
   padding: 10px
 }
 
-.dialog {
-
+.dialog a {
+  text-decoration: none;
+  color: white;
 }
 
-.dialog.active{
+.dialog a.active {
   color: gold;
 }
 
