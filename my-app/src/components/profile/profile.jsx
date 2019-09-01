@@ -4,10 +4,13 @@ import MyPosts from './myPosts/myPosts';
 import ProfileInfo from './profileInfo/profileInfo';
 
 
-const Profile = () =>(
+const Profile = (props) =>(
     <div>
        <ProfileInfo/>
-       <MyPosts/>
+       <MyPosts 
+        postsData = { props.profilePage }
+        apdatePostText = {props.apdatePostText}
+        addPost = {props.addPost}/>
      </div>
 );
 export default Profile;

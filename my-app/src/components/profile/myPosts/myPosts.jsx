@@ -3,20 +3,38 @@ import classes from './myPosts.module.css';
 import Post from './post/post';
 
 
-const MyPosts = () => (
+const MyPosts = (props) => {
+
+  let posts = 
+    props.postsData.postsData.map(post => <Post message = {post.message}/>);
+
+  const newPostElement = React.createRef();
+  let addPost = () =>{
+     props.addPost();
+  };
+
+  return (
     <div className={classes.profile}>
-       <div>
-         My Posts
+      <div>
+        My Posts
          <div>
-           New post
-         </div>
-         <div className = {classes.posts}>
-          <Post message = 'hi, how are you?'/>
-          <Post message = 'its my first post'/>
-          <Post message = 'you good boy'/>
-          <Post message = 'you to! Lol)'/>
-         </div>
-       </div>
-     </div>
-);
+          <textarea ref={ newPostElement }
+            cols="30"
+            rows="5"
+            value = {props.postsData.newPostText.text}
+            onChange = {() => props.apdatePostText(newPostElement.current.value)}/>
+        </div>
+        <div>
+          <button
+            onClick={addPost}>
+              add post
+          </button>
+        </div>
+        <div className={classes.posts}>
+          {posts}
+        </div>
+      </div>
+    </div>
+  );
+};
 export default MyPosts;
