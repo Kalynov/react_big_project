@@ -10,8 +10,17 @@ const MyPosts = (props) => {
 
   const newPostElement = React.createRef();
   let addPost = () =>{
-     props.addPost();
+    props.dispatch({type:'ADD-POST'})
+     /* props.addPost(); */
   };
+
+  let apdatePostText = () =>{
+    let text = newPostElement.current.value
+    props.dispatch({
+      type:'UPDATE-NEW-POST-TEXT',
+      text:text,
+    })
+  }
 
   return (
     <div className={classes.profile}>
@@ -22,7 +31,7 @@ const MyPosts = (props) => {
             cols="30"
             rows="5"
             value = {props.postsData.newPostText.text}
-            onChange = {() => props.apdatePostText(newPostElement.current.value)}/>
+            onChange = { apdatePostText }/>
         </div>
         <div>
           <button

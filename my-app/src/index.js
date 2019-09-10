@@ -12,9 +12,9 @@ let renderFullTree = (state) => {
   ReactDOM.render(
     <App
       state = {state}
-      apdatePostText = {store.apdatePostText.bind(store)}
-      addPost = {store.addPost.bind(store)}
-      renderFullTree = {store.renderFullTree}
+      dispatch = {store.dispatch.bind(store)}
+     /*  apdatePostText = {store.apdatePostText.bind(store)}
+      addPost = {store.addPost.bind(store)} */
     />, document.getElementById('root'));
 };
 

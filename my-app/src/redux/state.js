@@ -61,6 +61,18 @@ let store = {
   },
 
   dispatch(action) {
+    switch (action.type){
+      case 'ADD-POST' :{
+        this.addPost()
+      }
+      break;
+      case 'UPDATE-NEW-POST-TEXT': {
+        this.apdatePostText(action.text)
+      }
+      break;
+      default: console.error('this type action is not defined in dispatch')
+    }
+    
 
   }
 };

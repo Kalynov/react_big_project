@@ -9,8 +9,10 @@ const Profile = (props) =>(
        <ProfileInfo/>
        <MyPosts 
         postsData = { props.profilePage }
-        apdatePostText = {props.apdatePostText}
-        addPost = {props.addPost}/>
+        dispatch = {props.dispatch}
+        /* apdatePostText = {props.apdatePostText}
+        addPost = {props.addPost} */
+        />
      </div>
 );
 export default Profile;
