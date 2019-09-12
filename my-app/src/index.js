@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 
-import store, { subscribe } from './redux/state';
-import { addPost, apdatePostText } from './redux/state';
+import store, { subscribe } from './redux/reduxStore';
+//import { addPost, apdatePostText } from './redux/state';
 import App from './App';
 
 
@@ -20,7 +20,11 @@ let renderFullTree = (state) => {
 
 
 renderFullTree(store.getState());
-store.subscribe(renderFullTree);
+store.subscribe(()=>{
+  let state = store.getState()
+  renderFullTree(state);
+
+});
 
 
 // If you want your app to work offline and load faster, you can change

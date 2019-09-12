@@ -1,3 +1,5 @@
+import profileReducer from "./profileReducer";
+import dialogsReducer from "./dialogsReducer";
 
 let store = {
   _state: {
@@ -18,6 +20,7 @@ let store = {
         { id: 5, message: "wazzzap" },
         { id: 6, message: "omg" }
       ],
+      newMessageBody: "",
     },
     profilePage: {
       postsData: [
@@ -38,43 +41,20 @@ let store = {
     return this._state;
   },
 
-  _renderFullTree() {
-    console.log("render");
-  },
-
-  addPost() {
-    let newPost = {
-      id: 5,
-      message: this._state.profilePage.newPostText.text,
-    };
-    this._state.profilePage.postsData.push(newPost);
-    this._renderFullTree(this._state);
-  },
-
-  apdatePostText(text) {
-    this._state.profilePage.newPostText.text = text;
-    this._renderFullTree(this._state);
-  },
 
   subscribe(observer) {
     this._renderFullTree = observer;
   },
 
   dispatch(action) {
-    switch (action.type){
-      case 'ADD-POST' :{
-        this.addPost()
-      }
-      break;
-      case 'UPDATE-NEW-POST-TEXT': {
-        this.apdatePostText(action.text)
-      }
-      break;
-      default: console.error('this type action is not defined in dispatch')
-    }
-    
+    this._state.profilePage = profileReducer(this._state.profilePage, action);
 
+    this._state.dialogPage = dialogsReducer(this._state.dialogPage, action);
+    this._renderFullTree(this._state);
   }
 };
+
+
+
 
 export default store;
