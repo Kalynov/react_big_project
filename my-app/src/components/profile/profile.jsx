@@ -2,16 +2,14 @@ import React from 'react';
 import classes from './profile.module.css';
 import MyPosts from './myPosts/myPosts';
 import ProfileInfo from './profileInfo/profileInfo';
+import MyPostsContainer from './myPosts/myPostsContainer';
 
 
 const Profile = (props) =>(
     <div>
        <ProfileInfo/>
-       <MyPosts 
-        postsData = { props.profilePage }
-        dispatch = {props.dispatch}
-        /* apdatePostText = {props.apdatePostText}
-        addPost = {props.addPost} */
+       <MyPostsContainer
+         store = {props.store} 
         />
      </div>
 );

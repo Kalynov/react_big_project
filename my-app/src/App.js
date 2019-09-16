@@ -22,6 +22,7 @@ const App = (props) => (
                     path = "/profile"
                     render = {
                         () => <Profile
+                            store = {props.store}
                             profilePage = {props.state.profilePage}
                             dispatch = {props.dispatch}
                             /* addPost = {props.addPost}

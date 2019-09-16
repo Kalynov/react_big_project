@@ -1,7 +1,7 @@
 import profileReducer from "./profileReducer";
 import dialogsReducer from "./dialogsReducer";
 
-let store = {
+/* let store = {
   _state: {
     dialogPage: {
       dialogsData: [
@@ -54,7 +54,7 @@ let store = {
   }
 };
 
-
+ */
 
 
 export default store;

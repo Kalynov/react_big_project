@@ -21,7 +21,7 @@ let initialState = {
   newMessageBody: "",
 }
 
-const dialogsReducer = (state =initialState, action) => {
+const dialogsReducer = (state = initialState, action) => {
 
   switch (action.type){
   

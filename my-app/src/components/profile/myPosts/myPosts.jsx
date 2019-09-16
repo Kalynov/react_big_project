@@ -8,17 +8,18 @@ import { addPostActionCreator, apdatePostTextActionCreator } from '../../../redu
 const MyPosts = (props) => {
 
   let posts = 
-    props.postsData.postsData.map(post => <Post message = {post.message}/>);
+    props.posts.map(post => <Post message = {post.message}/>);
 
   const newPostElement = React.createRef();
-  let addPost = () =>{
-    props.dispatch(addPostActionCreator())
-     /* props.addPost(); */
+  let onAddPost = () =>{
+   /*  props.dispatch(addPostActionCreator()) */
+    props.addPost();
   };
 
-  let apdatePostText = () =>{
+  let onUpdatePostText = () =>{
     let text = newPostElement.current.value
-    props.dispatch(apdatePostTextActionCreator(text));
+    props.updatePostText(text);
+    /* props.dispatch(apdatePostTextActionCreator(text)); */
   }
 
   return (
@@ -29,12 +30,12 @@ const MyPosts = (props) => {
           <textarea ref={ newPostElement }
             cols="30"
             rows="5"
-            value = {props.postsData.newPostText.text}
-            onChange = { apdatePostText }/>
+            value = {props.newPostText.text}
+            onChange = { onUpdatePostText }/>
         </div>
         <div>
           <button
-            onClick={addPost}>
+            onClick={onAddPost}>
               add post
           </button>
         </div>

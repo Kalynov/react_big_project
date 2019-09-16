@@ -12,6 +12,7 @@ let renderFullTree = (state) => {
   ReactDOM.render(
     <App
       state = {state}
+      store = {store}
       dispatch = {store.dispatch.bind(store)}
      /*  apdatePostText = {store.apdatePostText.bind(store)}
       addPost = {store.addPost.bind(store)} */
