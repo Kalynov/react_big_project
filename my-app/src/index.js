@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 
-import store, { subscribe } from './redux/reduxStore';
+import store from './redux/reduxStore';
 //import { addPost, apdatePostText } from './redux/state';
 import App from './App';
 

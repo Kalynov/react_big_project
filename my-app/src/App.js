@@ -4,11 +4,11 @@ import './App.css';
 import Header from './components/header/header';
 import Navbar from './components/navbar/navbar';
 import Profile from './components/profile/profile';
-import Dialogs from './components/dialogs/dialogs';
 import { BrowserRouter, Route } from 'react-router-dom';
 import News from './components/news/news';
 import Music from './components/music/music';
 import Setting from './components/setting/setting';
+import DialogsContainer from './components/dialogs/dialogsContainer';
 
 
 const App = (props) => (
@@ -23,14 +23,10 @@ const App = (props) => (
                     render = {
                         () => <Profile
                             store = {props.store}
-                            profilePage = {props.state.profilePage}
-                            dispatch = {props.dispatch}
-                            /* addPost = {props.addPost}
-                            apdatePostText = {props.apdatePostText} */
                         />
                     }
                 />
-                <Route path = "/dialogs" render={() => <Dialogs  dialogsPage = {props.state.dialogPage} dispatch = {props.dispatch}/>} />
+                <Route path = "/dialogs" render={() => <DialogsContainer   store = {props.store}/>} />
                 <Route path = "/news" render={() => <News/>} />
                 <Route path = "/music" render={() => <Music/>} />
                 <Route path = "/setting" render={() => <Setting/>} />
