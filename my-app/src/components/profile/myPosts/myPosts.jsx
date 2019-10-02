@@ -7,7 +7,7 @@ import Post from './post/post';
 const MyPosts = (props) => {
 
   let posts = 
-    props.posts.map(post => <Post message = {post.message}/>);
+    props.profilePage.postsData.map(post => <Post message = {post.message}/>);
 
   const newPostElement = React.createRef();
   let onAddPost = () =>{
@@ -27,7 +27,7 @@ const MyPosts = (props) => {
           <textarea ref={ newPostElement }
             cols="30"
             rows="5"
-            value = {props.newPostText.text}
+            value = {props.profilePage.newPostText}
             onChange = { onUpdatePostText }/>
         </div>
         <div>

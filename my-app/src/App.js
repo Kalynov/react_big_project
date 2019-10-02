@@ -12,7 +12,6 @@ import DialogsContainer from './components/dialogs/dialogsContainer';
 
 
 const App = (props) => (
-    <BrowserRouter>
         <div className="app-wrapper">
             <Header />
             <Navbar />
@@ -33,7 +32,6 @@ const App = (props) => (
             </div>
 
         </div>
-    </BrowserRouter>
 );
 
 export default App;
