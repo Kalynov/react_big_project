@@ -1,0 +1,17 @@
+.avatar {
+    width: 100px;
+    height: 100px;
+}
+
+.pages {
+    font-size: 12px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.active{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
