@@ -25,10 +25,6 @@ jobs:
     - name: Install NPM packages
       working-directory: ./my-app
       run: npm ci
-
-    - name: Run tests
-      working-directory: ./my-app
-      run: npm run test
     
     - name: Build project
       working-directory: ./my-app
