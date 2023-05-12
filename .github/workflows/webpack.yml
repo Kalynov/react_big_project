@@ -23,8 +23,8 @@ jobs:
         node-version: 13.x
       
     - name: Install NPM packages
-      run: 
-        cd my-app & npm ci
+      working-directory: ~/my-app
+      run: npm ci
 
     - name: Run tests
       run: npm run test
