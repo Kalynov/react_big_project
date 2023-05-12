@@ -24,8 +24,7 @@ jobs:
       
     - name: Install NPM packages
       run: 
-        cd my-app
-        npm ci
+        cd my-app & npm ci
 
     - name: Run tests
       run: npm run test
