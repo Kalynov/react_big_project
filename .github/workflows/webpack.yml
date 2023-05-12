@@ -26,4 +26,4 @@ jobs:
       run: |
         cd my-app
         npm install
-        npm build
+        npm run build
