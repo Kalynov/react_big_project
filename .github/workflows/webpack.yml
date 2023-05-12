@@ -21,12 +21,11 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 13.x
-    
-    - name: change directory
-      run: cd my-app
       
     - name: Install NPM packages
-      run: npm ci
+      run: 
+        cd my-app
+        npm ci
 
     - name: Run tests
       run: npm run test
