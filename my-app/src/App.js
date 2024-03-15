@@ -4,7 +4,7 @@ import './App.css';
 import Header from './components/header/header';
 import Navbar from './components/navbar/navbar';
 import Profile from './components/profile/profile';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import News from './components/news/news';
 import { UsersContainer }  from './components/users/usersContainer';
 import Music from './components/music/music';

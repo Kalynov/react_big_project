@@ -10,7 +10,7 @@ export const Users = (props) => {
     axios.get(`https://social-network.samuraijs.com/api/1.0/users?count=${props.pageSize}&page=${props.currentPage}`).then(respons => {
       props.setUsers(respons.data)
     })
-  },[props.currentPage])
+  },[props, props.currentPage])
 
 
 
@@ -41,7 +41,7 @@ export const Users = (props) => {
         props.users.map(user => <div key = {user.id}>
           <span>
             <div>
-              <img className = {classes.avatar} src = {user.photos.small || "https://w7.pngwing.com/pngs/931/209/png-transparent-computer-icons-symbol-avatar-logo-person-with-helmut-miscellaneous-black-silhouette.png"}/> 
+              <img alt="" className={classes.avatar} src={user.photos.small || "https://w7.pngwing.com/pngs/931/209/png-transparent-computer-icons-symbol-avatar-logo-person-with-helmut-miscellaneous-black-silhouette.png"}/> 
             </div>
             <div>
               {
