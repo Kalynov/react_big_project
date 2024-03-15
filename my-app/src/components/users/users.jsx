@@ -1,4 +1,5 @@
 import React, { useEffect } from "react"
+// eslint-disable-next-line no-unused-vars
 import classes from './users.module.css';
 import axios from "axios";
 
